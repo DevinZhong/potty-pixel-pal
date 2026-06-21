@@ -1,0 +1,15 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencies/build output for future versions
+node_modules/
+dist/
+build/
+
+# Local scratch files
+.env
+.env.*
+*.log
