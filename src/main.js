@@ -32,12 +32,17 @@ function setFace(face) {
 function setHandleAngle(angle) {
   handleAngle = Math.max(0, Math.min(90, angle));
   const progress = handleAngle / 90;
-  const gripY = progress * 132;
-  const rigY = progress * 62;
-  const rigScale = 1 - progress * 0.26;
-  const gripScale = 1 - progress * 0.18;
-  toy.style.setProperty("--handle-transform", "translateY(" + gripY + "px) rotateX(" + (-handleAngle) + "deg) scaleY(" + gripScale + ")");
-  toy.style.setProperty("--rig-transform", "translateY(" + rigY + "px) scaleY(" + rigScale + ")");
+  const gripY = progress * 94;
+  const gripScale = 1 - progress * 0.1;
+  const armAngle = progress * 24;
+  const leftArmAngle = -10 - armAngle;
+  const rightArmAngle = 10 + armAngle;
+  const armScale = 1 - progress * 0.18;
+  toy.style.setProperty("--handle-grip-y", gripY + "px");
+  toy.style.setProperty("--handle-grip-scale", String(gripScale));
+  toy.style.setProperty("--handle-arm-left-angle", leftArmAngle + "deg");
+  toy.style.setProperty("--handle-arm-right-angle", rightArmAngle + "deg");
+  toy.style.setProperty("--handle-arm-scale", String(armScale));
 }
 
 function resetHandle() {
@@ -96,7 +101,7 @@ function triggerHandle() {
 
 function updateHandleFromPointer(event) {
   const distance = Math.max(0, event.clientY - dragStartY);
-  setHandleAngle(distance / 132 * 90);
+  setHandleAngle(distance / 104 * 90);
 }
 
 handle.addEventListener("pointerdown", (event) => {
