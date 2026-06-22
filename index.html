@@ -10,17 +10,19 @@
     <main class="prototype-shell">
       <section class="phone-stage" aria-label="Potty Pixel Pal toy prototype">
         <div class="toy" data-mode="train" data-face="idle">
+          <div class="handle-rig" aria-hidden="true">
+            <span class="handle-side handle-side-left"></span>
+            <span class="handle-side handle-side-right"></span>
+          </div>
+          <button class="handle-grip" type="button" aria-label="Pull handle" aria-describedby="handleHint"></button>
           <div class="handle-pivot pivot-left" aria-hidden="true"></div>
           <div class="handle-pivot pivot-right" aria-hidden="true"></div>
-          <button class="handle" type="button" aria-label="Pull handle" aria-describedby="handleHint">
-            <span class="handle-rail"></span>
-          </button>
-          <p id="handleHint" class="sr-only">Drag the yellow handle down until it reaches the bottom, then release.</p>
+          <p id="handleHint" class="sr-only">Drag the top yellow bar down until it reaches the eyes, then release.</p>
 
           <div class="roll-body">
             <div class="roll-side roll-side-left" aria-hidden="true"></div>
             <div class="roll-side roll-side-right" aria-hidden="true"></div>
-            <div class="perforation" aria-hidden="true"></div>
+            <div class="paper-dashes" aria-hidden="true"></div>
 
             <div class="face-row" aria-label="LCD eyes">
               <div class="eye eye-left" aria-hidden="true"><span></span></div>

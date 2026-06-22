@@ -6,12 +6,12 @@ Potty Pixel Pal should feel like a physical electronic potty-training toy. The p
 
 | Control | How It Works | Purpose |
 | --- | --- | --- |
-| Yellow handle | Drag downward along an arc until it reaches the bottom, then release | Wake, confirm, trigger reactions, enter or exit mini-game |
+| Yellow top grip | Drag the top yellow bar downward until the handle flips from the toy top to the eye area, then release | Wake, confirm, trigger reactions, enter or exit mini-game |
 | `1` button | Press down | No. 1 / pee training prompt |
 | `◎` button | Press down | Flush / clean / reset prompt |
 | `2` button | Press down | No. 2 / poop training prompt |
 
-The handle should not trigger from a simple tap. It must be pulled far enough, roughly 90 degrees. If released too early, it springs back and does nothing.
+Only the top yellow grip is draggable. The thin left and right side arms are visual supports. A simple tap should not trigger anything. The grip must be dragged downward far enough to flip the handle roughly 90 degrees from the toy top to the eye area. If released too early, it springs back and does nothing.
 
 ## Main Training Loop
 
@@ -59,3 +59,4 @@ The poop icon should fill most of the LCD height so it feels like a large chunky
 - LCD is feedback only.
 - Buttons and handle are the only direct controls.
 - The toy should prefer one-line messages such as `PIP PANTS`, `NO. 1`, `FLUSH`, `NO. 2`, `GOOD JOB`, `MISS`, and `POTTY POP`.
+

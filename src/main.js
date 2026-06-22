@@ -1,5 +1,5 @@
 const toy = document.querySelector(".toy");
-const handle = document.querySelector(".handle");
+const handle = document.querySelector(".handle-grip");
 const buttons = Array.from(document.querySelectorAll(".toy-button"));
 const statusText = document.querySelector("#statusText");
 
@@ -22,6 +22,7 @@ let pullCount = 0;
 let pullWindow = 0;
 let isDraggingHandle = false;
 let handleAngle = 0;
+let dragStartY = 0;
 
 function setFace(face) {
   toy.dataset.face = face;
@@ -30,15 +31,19 @@ function setFace(face) {
 
 function setHandleAngle(angle) {
   handleAngle = Math.max(0, Math.min(90, angle));
-  toy.style.setProperty("--handle-angle", `${handleAngle}deg`);
+  const progress = handleAngle / 90;
+  const gripY = progress * 132;
+  const rigY = progress * 62;
+  const rigScale = 1 - progress * 0.26;
+  const gripScale = 1 - progress * 0.18;
+  toy.style.setProperty("--handle-transform", "translateY(" + gripY + "px) rotateX(" + (-handleAngle) + "deg) scaleY(" + gripScale + ")");
+  toy.style.setProperty("--rig-transform", "translateY(" + rigY + "px) scaleY(" + rigScale + ")");
 }
 
-function resetHandle(fromAngle = handleAngle) {
-  handle.style.setProperty("--release-angle", `${fromAngle}deg`);
+function resetHandle() {
   handle.classList.remove("is-dragging");
-  handle.classList.add("is-snapback");
+  toy.classList.remove("is-pulling");
   setHandleAngle(0);
-  window.setTimeout(() => handle.classList.remove("is-snapback"), 540);
 }
 
 function say(text, face = "focus", hold = 950) {
@@ -68,7 +73,9 @@ function pressButton(button) {
 function triggerHandle() {
   pullCount += 1;
   window.clearTimeout(pullWindow);
-  pullWindow = window.setTimeout(() => { pullCount = 0; }, 1500);
+  pullWindow = window.setTimeout(() => {
+    pullCount = 0;
+  }, 1500);
 
   if (mode === "game") {
     stopGame("QUIT");
@@ -88,21 +95,17 @@ function triggerHandle() {
 }
 
 function updateHandleFromPointer(event) {
-  const rect = handle.getBoundingClientRect();
-  const axisX = rect.left + rect.width / 2;
-  const axisY = rect.top + rect.height * 0.82;
-  const dx = event.clientX - axisX;
-  const dy = event.clientY - axisY;
-  const raw = Math.atan2(dy, Math.abs(dx) + 1) * 180 / Math.PI;
-  setHandleAngle(Math.max(0, raw));
+  const distance = Math.max(0, event.clientY - dragStartY);
+  setHandleAngle(distance / 132 * 90);
 }
 
 handle.addEventListener("pointerdown", (event) => {
   isDraggingHandle = true;
+  dragStartY = event.clientY;
   handle.setPointerCapture(event.pointerId);
-  handle.classList.remove("is-snapback");
   handle.classList.add("is-dragging");
-  updateHandleFromPointer(event);
+  toy.classList.add("is-pulling");
+  setHandleAngle(0);
 });
 
 handle.addEventListener("pointermove", (event) => {
@@ -113,10 +116,11 @@ handle.addEventListener("pointermove", (event) => {
 function finishHandleDrag(event) {
   if (!isDraggingHandle) return;
   isDraggingHandle = false;
-  const completed = handleAngle >= 84;
-  const releaseAngle = handleAngle;
-  if (handle.hasPointerCapture(event.pointerId)) handle.releasePointerCapture(event.pointerId);
-  resetHandle(releaseAngle);
+  const completed = handleAngle >= 86;
+  if (handle.hasPointerCapture(event.pointerId)) {
+    handle.releasePointerCapture(event.pointerId);
+  }
+  resetHandle();
   if (completed) {
     window.setTimeout(triggerHandle, 180);
   }
@@ -167,7 +171,7 @@ function spawnPoop() {
   clearPoop();
   activeLane = Math.floor(Math.random() * 3);
   toy.dataset.poop = String(activeLane);
-  statusText.textContent = combo > 2 ? `X${combo}` : "POP";
+  statusText.textContent = combo > 2 ? "X" + combo : "POP";
   gameTimer = window.setTimeout(() => {
     combo = 0;
     buzz("MISS");
