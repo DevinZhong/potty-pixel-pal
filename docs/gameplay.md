@@ -4,27 +4,47 @@
 
 Potty Pop LCD
 
-## Core Loop
+## Product Fantasy
 
-The rectangular LCD screen shows one or more low-resolution symbols. The player presses the matching physical-style button before the timer expires.
+Potty Pixel Pal is first a paper-roll electronic potty-training toy, not a standalone arcade game. The toy should feel like an old learning gadget with a tiny one-line LCD display, two expressive LCD eyes, chunky physical buttons, slow screen refresh, and fussy feedback.
 
-| Symbol Type | Button | Meaning |
+The main interaction is pretending to guide a toddler through a tiny potty routine: sit, wait, flush, celebrate, repeat. The reaction game is an unlockable or built-in mini-game inside that toy.
+
+## Main Toy Loop
+
+| Button | Training Role | Example LCD Feedback |
 | --- | --- | --- |
-| Drop | Yellow | No. 1 / pee-style category |
-| Puff | Blue | gas / flush / middle category |
-| Block | Red | No. 2 / poop-style category |
+| Left / yellow | Sit / try | `SIT?`, `TRY 1`, `WAIT` |
+| Center / blue | Flush / reset | `FLUSH`, `WHOOSH`, `CLEAN` |
+| Right / red | Done / celebrate | `DONE?`, `YAY!`, `STAR` |
 
-The exact symbols should be original pixel icons, not copied from any film UI.
+The eyes should react to every interaction. They can blink, squint, smile, panic, sleep, wink, or look proud. Tapping the eyes can cycle expressions, like a physical toy whose screen face changes when handled.
+
+## Mini-Game Loop
+
+The narrow LCD display is divided into three invisible positions: left, center, and right. A low-resolution poop-style pixel icon pops up in one position, and the player must press the physical-style button directly below that position before the timer expires.
+
+This is closer to a tiny LCD whack-a-mole reaction game than a category quiz. The buttons do not mean different potty-training concepts during the mini-game; they become position controls.
+
+| Screen Position | Button | Meaning |
+| --- | --- | --- |
+| Left pop-up | Left / yellow button | Clear the left icon |
+| Center pop-up | Center / blue button | Clear the center icon |
+| Right pop-up | Right / red button | Clear the right icon |
+
+The exact poop icon should be an original chunky pixel drawing or emoji-inspired placeholder during prototyping, not copied from any film UI.
 
 ## Controls
 
 | Input | Action |
 | --- | --- |
-| Keyboard `1` | Yellow button |
-| Keyboard `2` | Blue button |
-| Keyboard `3` | Red button |
+| Tap eyes | Change expression |
+| Tap LCD | Wake / greet / exit mini-game |
+| Keyboard `1` | Left button |
+| Keyboard `2` | Center button |
+| Keyboard `3` | Right button |
 | Touch / click | Press visible button |
-| Space | Start / wake |
+| Space | Start / exit mini-game |
 
 ## States
 
@@ -32,47 +52,50 @@ The exact symbols should be original pixel icons, not copied from any film UI.
 SLEEP
   dim LCD, slow blink, low battery tick
 BOOT
-  scan line, short beep sequence, logo text
+  one-line scan, short beep sequence, logo text
+TRAIN
+  sit / flush / done potty-training routine
 IDLE
-  face animations, waiting for input
+  eye animations, waiting for input
 GAME
-  symbol matching rounds
+  three-position poop pop reaction mini-game
 SCORE
-  rank, score, silly reaction
+  rank, score, proud or fussy reaction
 ```
 
-## Round Rules
+## Mini-Game Rules
 
-- A symbol appears for a short time.
-- Correct button adds score and combo.
+- A poop icon appears in one of three LCD positions for a short time.
+- Correct matching button clears the icon, adds score, and increases combo.
 - Wrong button breaks combo and triggers an error expression.
 - Timeout counts as a miss.
-- Every few rounds, speed increases.
-- Blue button can optionally become a `FLUSH` special that clears multiple symbols.
+- Every few hits, speed increases, but the refresh should still feel old and stepped.
+- Later rounds can show decoy flashes, double-pops, or a brief `FLUSH` bonus round.
 
 ## Scoring
 
 | Event | Score |
 | --- | --- |
-| Correct hit | +10 |
-| Combo bonus | +2 per streak step |
-| Perfect round | +25 |
-| Wrong hit | -5 |
-| Timeout | 0 and combo reset |
+| Correct hit | +1 |
+| Ten clears | Win / star reaction |
+| Wrong hit | Buzz and combo reset |
+| Timeout | Miss and combo reset |
 
 ## Feedback
 
 - Correct: short rising beep, happy LCD eyes.
-- Wrong: buzz, slanted eyes.
+- Wrong: buzz, panic eyes.
 - Timeout: dim flash.
-- Combo: screen sparkle pixels.
-- Game over: rolling LCD text.
+- Combo: one-line LCD counter such as `X3`.
+- Game over: one-line text such as `STAR` or `AGAIN?`.
 
 ## Visual Constraints
 
-The game screen should feel constrained and toy-like:
+The toy should feel constrained, old, and physical:
 
-- Very low resolution.
+- One-line text LCD, not a rich game screen.
+- Very low-resolution icons and expression masks.
 - No smooth modern icons.
-- Limited palette: mint background, dark green pixels, occasional yellow frame.
-- Frame-by-frame LCD ghosting rather than fluid animation.
+- Limited palette: mint LCD, dark green pixels, yellowed paper, bright molded plastic.
+- Slow stepped refresh and occasional blink rather than fluid animation.
+- Mobile-first layout: eyes and LCD above three large thumb-friendly buttons.

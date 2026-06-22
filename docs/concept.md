@@ -2,13 +2,13 @@
 
 ## One-Line Pitch
 
-Potty Pixel Pal is an original paper-roll-shaped electronic toy that teaches tiny potty-training concepts through chunky buttons, mint LCD expressions, and a silly reaction game.
+Potty Pixel Pal is a paper-roll-shaped electronic potty-training toy that teaches tiny potty routines through chunky buttons, slow mint LCD expressions, and a hidden reaction mini-game.
 
 ## Creative Position
 
-This is not a direct clone of any film character. The project keeps the broad toy category and comedic premise: a paper-roll potty-training gadget that behaves like a forgotten early-2000s learning toy.
+The project aims for a high-recognition fan-inspired feel: a forgotten old potty-training gadget, shaped around a toilet-paper roll, with expressive LCD eyes and fussy toy feedback.
 
-The design should feel familiar to anyone who remembers plastic learning toys, Tiger-style LCD games, and toy-store electronics, while staying visually distinct from protected movie character designs.
+The goal is to make the public reference easy to understand while keeping the implementation re-drawn and project-owned. The strongest overlap should be the broad toy fantasy, era, object category, and comedic premise. The exact face layout, screen graphics, button art, voice lines, proprietary names, and official assets should remain original.
 
 ## Character Core
 
@@ -17,51 +17,62 @@ The design should feel familiar to anyone who remembers plastic learning toys, T
 | Project name | Potty Pixel Pal |
 | Suggested nickname | Pip |
 | Chinese nickname | 皮皮卷 |
-| Object type | Paper-roll-shaped LCD training toy |
+| Object type | Paper-roll-shaped LCD potty-training toy |
 | Personality | Helpful, fussy, proud of simple tasks, occasionally overdramatic |
 | Emotional arc | Sleepy outdated gadget wakes up, remembers its purpose, becomes a playful companion |
-| Audience | Makers, web toy fans, animation fans, and retro LCD game enjoyers |
+| Audience | Makers, web toy fans, animation fans, retro LCD game enjoyers, and social-media viewers who recognize the reference |
 
 ## Visual Language
 
-Keep:
+Keep close to the reference category:
 
-- Warm white paper-roll body.
-- Bright molded plastic handle.
-- Mint LCD screens.
-- Three large physical buttons.
-- Low-resolution display graphics.
-- Soft toy-like shadows and button depth.
+- Warm white toilet-paper-roll body.
+- Bright molded plastic hanger or handle.
+- Two mint LCD eye displays that change expression.
+- A very narrow one-line LCD status display.
+- Chunky physical buttons below the display.
+- Slow, stepped, low-refresh screen behavior.
+- Old educational-toy labels, beeps, buzzes, and fussy prompts.
 
-Change from any direct inspiration:
+Redraw for project identity:
 
-- Do not copy exact face layout, screen proportions, button icons, text, mouth shape, eyebrows, or casing silhouette from movie imagery.
-- Use original facial expressions and symbol language.
-- Use original labels such as `PIP`, `GO`, `FLUSH`, or abstract icons instead of protected character branding.
+- Use original proportions, casing curves, labels, expression masks, button colors, and pixel icons.
+- Avoid official screenshots, logos, dialogue, voice lines, exact UI art, and exact character branding.
+- Make the browser toy feel like a playable cousin of the source idea, not an asset copy.
+
+## Interaction Fantasy
+
+The toy is not only a game. It should behave like a small potty-training device with several pretend functions:
+
+- `SIT` / try routine.
+- `FLUSH` / reset routine.
+- `DONE` / celebration routine.
+- Eye taps that cycle expressions.
+- Sleepy idle blinks and low-battery fussing.
+- A hidden poop-pop reaction mini-game.
 
 ## Color Direction
 
 | Part | Suggested Color |
 | --- | --- |
 | Paper body | Warm white, ivory highlights |
-| Plastic frame | Sunny yellow or teal-yellow variant |
+| Plastic frame | Sunny yellow / toy-store gold |
 | LCD active pixels | Dark green |
-| LCD glow | Mint green |
+| LCD glass | Mint green |
 | Button A | Yellow |
 | Button B | Blue |
 | Button C | Red |
-| Accent | Soft cyan gel-like hands or tabs |
+| Accent | Small sticker badge or molded toy label |
 
 ## Form Notes
 
-The body can still be a paper roll. That is a generic object category. The safest path is to make the silhouette and face unmistakably original:
+The safest recognizable path is not to make the character unrelated. Keep the paper-roll electronic potty-toy silhouette readable, but redraw the details:
 
-- Slightly squarer casing.
-- Different handle shape.
-- Different eye spacing.
-- Different screen proportions.
-- Different button icon language.
-- Original status text.
+- Use a one-line LCD instead of a rich screen.
+- Make the eyes the main emotional interface.
+- Use a different badge/name area and original button labels.
+- Keep the screen refresh slow and toy-like.
+- Let the web version add interactions that the film does not fully explain.
 
 ## Tone
 

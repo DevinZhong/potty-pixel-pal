@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Potty Pixel Pal UI Prototype</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="prototype-shell">
+      <section class="phone-stage" aria-label="Potty Pixel Pal toy prototype">
+        <div class="toy" data-mode="train" data-face="idle">
+          <div class="handle-pivot pivot-left" aria-hidden="true"></div>
+          <div class="handle-pivot pivot-right" aria-hidden="true"></div>
+          <button class="handle" type="button" aria-label="Pull handle" aria-describedby="handleHint">
+            <span class="handle-rail"></span>
+          </button>
+          <p id="handleHint" class="sr-only">Drag the yellow handle down until it reaches the bottom, then release.</p>
+
+          <div class="roll-body">
+            <div class="roll-side roll-side-left" aria-hidden="true"></div>
+            <div class="roll-side roll-side-right" aria-hidden="true"></div>
+            <div class="perforation" aria-hidden="true"></div>
+
+            <div class="face-row" aria-label="LCD eyes">
+              <div class="eye eye-left" aria-hidden="true"><span></span></div>
+              <div class="eye eye-right" aria-hidden="true"><span></span></div>
+            </div>
+
+            <div class="mouth" aria-hidden="true"><span></span></div>
+
+            <div class="lcd-strip" aria-live="polite" aria-label="Status screen">
+              <span id="statusText">PIP PANTS</span>
+              <span class="poop-pixel lane-left" aria-hidden="true"></span>
+              <span class="poop-pixel lane-center" aria-hidden="true"></span>
+              <span class="poop-pixel lane-right" aria-hidden="true"></span>
+              <span class="scanline" aria-hidden="true"></span>
+            </div>
+
+            <div class="button-deck" aria-label="Toy controls">
+              <button class="toy-button button-left" type="button" data-action="sit" aria-label="Number one training button"><span>1</span></button>
+              <button class="toy-button button-center" type="button" data-action="flush" aria-label="Flush training button"><span>◎</span></button>
+              <button class="toy-button button-right" type="button" data-action="done" aria-label="Number two training button"><span>2</span></button>
+            </div>
+
+            <div class="tiny-dashes" aria-hidden="true"></div>
+          </div>
+
+          <div class="side-controls" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="speaker" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="src/main.js"></script>
+  </body>
+</html>
