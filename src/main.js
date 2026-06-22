@@ -32,17 +32,15 @@ function setFace(face) {
 function setHandleAngle(angle) {
   handleAngle = Math.max(0, Math.min(90, angle));
   const progress = handleAngle / 90;
-  const gripY = progress * 94;
-  const gripScale = 1 - progress * 0.1;
-  const armAngle = progress * 24;
-  const leftArmAngle = -10 - armAngle;
-  const rightArmAngle = 10 + armAngle;
-  const armScale = 1 - progress * 0.18;
-  toy.style.setProperty("--handle-grip-y", gripY + "px");
-  toy.style.setProperty("--handle-grip-scale", String(gripScale));
-  toy.style.setProperty("--handle-arm-left-angle", leftArmAngle + "deg");
-  toy.style.setProperty("--handle-arm-right-angle", rightArmAngle + "deg");
-  toy.style.setProperty("--handle-arm-scale", String(armScale));
+  const frameY = progress * 149;
+  const sideHeight = 195 - progress * 154;
+  const sideTilt = progress * 24;
+  const sideOpacity = 1;
+  toy.style.setProperty("--handle-angle", handleAngle + "deg");
+  toy.style.setProperty("--handle-bar-y", frameY + "px");
+  toy.style.setProperty("--handle-side-height", sideHeight + "px");
+  toy.style.setProperty("--handle-side-tilt", sideTilt + "deg");
+  toy.style.setProperty("--handle-side-opacity", String(sideOpacity));
 }
 
 function resetHandle() {
@@ -53,11 +51,13 @@ function resetHandle() {
 
 function say(text, face = "focus", hold = 950) {
   statusText.textContent = text;
+  toy.dataset.message = text === "SMARTY PANTS" ? "brand" : "short";
   setFace(face);
   window.clearTimeout(idleTimer);
   idleTimer = window.setTimeout(() => {
     if (mode === "train") {
-      statusText.textContent = "PIP PANTS";
+      statusText.textContent = "SMARTY PANTS";
+      toy.dataset.message = "brand";
       setFace("idle");
     }
   }, hold);
@@ -65,6 +65,7 @@ function say(text, face = "focus", hold = 950) {
 
 function buzz(text = "NOPE") {
   statusText.textContent = text;
+  toy.dataset.message = "short";
   setFace("panic");
   toy.classList.add("is-buzzing");
   window.setTimeout(() => toy.classList.remove("is-buzzing"), 160);
@@ -154,21 +155,24 @@ function startGame() {
   combo = 0;
   roundMs = 1320;
   statusText.textContent = "POTTY POP";
+  toy.dataset.message = "short";
   setFace("focus");
   window.clearTimeout(gameTimer);
   gameTimer = window.setTimeout(spawnPoop, 760);
 }
 
-function stopGame(text = "PIP PANTS") {
+function stopGame(text = "SMARTY PANTS") {
   mode = "train";
   toy.dataset.mode = "train";
   clearPoop();
   window.clearTimeout(gameTimer);
   statusText.textContent = text;
+  toy.dataset.message = text === "SMARTY PANTS" ? "brand" : "short";
   setFace("idle");
   window.clearTimeout(idleTimer);
   idleTimer = window.setTimeout(() => {
-    statusText.textContent = "PIP PANTS";
+    statusText.textContent = "SMARTY PANTS";
+    toy.dataset.message = "brand";
   }, 900);
 }
 
@@ -177,6 +181,7 @@ function spawnPoop() {
   activeLane = Math.floor(Math.random() * 3);
   toy.dataset.poop = String(activeLane);
   statusText.textContent = combo > 2 ? "X" + combo : "POP";
+  toy.dataset.message = "short";
   gameTimer = window.setTimeout(() => {
     combo = 0;
     buzz("MISS");
@@ -192,6 +197,7 @@ function playLane(lane) {
     clearPoop();
     roundMs = Math.max(780, roundMs - 30);
     statusText.textContent = score >= 10 ? "GOOD JOB" : "CLEAN";
+    toy.dataset.message = "short";
     setFace(score >= 10 ? "happy" : "wink");
     if (score >= 10) {
       gameTimer = window.setTimeout(() => stopGame("GOOD JOB"), 950);
@@ -224,7 +230,7 @@ window.addEventListener("keydown", (event) => {
     handleAction(buttons[index].dataset.action, index, buttons[index]);
   }
   if (event.code === "Space") {
-    if (mode === "game") stopGame("PIP PANTS");
+    if (mode === "game") stopGame("SMARTY PANTS");
     else startGame();
   }
 });
@@ -236,4 +242,10 @@ window.setInterval(() => {
   window.setTimeout(() => setFace("idle"), 180);
 }, 3200);
 
-say("PIP PANTS", "happy", 1000);
+say("SMARTY PANTS", "happy", 1000);
+
+
+
+
+
+
