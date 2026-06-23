@@ -4,14 +4,15 @@
 
 ## One-Line Pitch
 
-Pip is a paper-roll-shaped electronic potty-training toy that teaches tiny potty routines through chunky buttons, slow mint LCD expressions, and a hidden reaction mini-game.
+Pippin Roll, nicknamed PIP, is a paper-roll-shaped electronic potty-training toy that teaches tiny potty routines through chunky buttons, slow mint LCD expressions, and a hidden reaction mini-game.
 
 ## Identity
 
 | Field | Direction |
 | --- | --- |
 | Project name | Potty Pixel Pal |
-| Character name | Pip |
+| Character name | Pippin Roll |
+| LCD nickname | PIP |
 | Chinese name | 皮皮卷 |
 | Object type | Paper-roll-shaped LCD potty-training toy |
 | Personality | Helpful, fussy, proud of simple tasks, occasionally overdramatic |
@@ -45,7 +46,7 @@ The project uses project-owned proportions, casing treatment, labels, expression
 
 ## Interaction Model
 
-Pip behaves like a physical electronic potty-training toy. The player does not tap the eyes or LCD screen directly. Those parts are outputs. The only inputs are the yellow pull handle and the three chunky buttons.
+Pippin Roll behaves like a physical electronic potty-training toy. The player does not tap the eyes or LCD screen directly. Those parts are outputs. The only inputs are the yellow pull handle and the three chunky buttons.
 
 ### Controls
 
@@ -84,7 +85,7 @@ Current prototype shortcut: pull the handle fully three times to enter the mini-
 - Eyes are screen output only.
 - LCD is screen output only.
 - Buttons and handle are the only direct controls.
-- The toy prefers one-line messages such as `PIP PANTS`, `NO. 1`, `FLUSH`, `NO. 2`, `GOOD JOB`, `MISS`, and `POTTY POP`.
+- The toy prefers one-line messages such as `PIPPIN ROLL`, `NO. 1`, `FLUSH`, `NO. 2`, `GOOD JOB`, `MISS`, and `POTTY POP`.
 
 ## Gameplay
 

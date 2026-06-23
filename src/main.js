@@ -2,6 +2,7 @@ const toy = document.querySelector(".toy");
 const handle = document.querySelector(".handle-grip");
 const buttons = Array.from(document.querySelectorAll(".toy-button"));
 const statusText = document.querySelector("#statusText");
+const brandText = "PIPPIN ROLL";
 
 const faces = ["idle", "happy", "focus", "wink", "panic", "sleep"];
 const trainingLines = {
@@ -53,12 +54,12 @@ function resetHandle() {
 
 function say(text, face = "focus", hold = 950) {
   statusText.textContent = text;
-  toy.dataset.message = text === "SMARTY PANTS" ? "brand" : "short";
+  toy.dataset.message = text === brandText ? "brand" : "short";
   setFace(face);
   window.clearTimeout(idleTimer);
   idleTimer = window.setTimeout(() => {
     if (mode === "train") {
-      statusText.textContent = "SMARTY PANTS";
+      statusText.textContent = brandText;
       toy.dataset.message = "brand";
       setFace("idle");
     }
@@ -171,18 +172,18 @@ function startGame() {
   gameTimer = window.setTimeout(spawnPoop, 760);
 }
 
-function stopGame(text = "SMARTY PANTS") {
+function stopGame(text = brandText) {
   mode = "train";
   toy.dataset.mode = "train";
   pendingFlushPraise = false;
   clearPoop();
   window.clearTimeout(gameTimer);
   statusText.textContent = text;
-  toy.dataset.message = text === "SMARTY PANTS" ? "brand" : "short";
+  toy.dataset.message = text === brandText ? "brand" : "short";
   setFace("idle");
   window.clearTimeout(idleTimer);
   idleTimer = window.setTimeout(() => {
-    statusText.textContent = "SMARTY PANTS";
+    statusText.textContent = brandText;
     toy.dataset.message = "brand";
   }, 900);
 }
@@ -241,7 +242,7 @@ window.addEventListener("keydown", (event) => {
     handleAction(buttons[index].dataset.action, index, buttons[index]);
   }
   if (event.code === "Space") {
-    if (mode === "game") stopGame("SMARTY PANTS");
+    if (mode === "game") stopGame(brandText);
     else startGame();
   }
 });
@@ -253,10 +254,5 @@ window.setInterval(() => {
   window.setTimeout(() => setFace("idle"), 180);
 }, 3200);
 
-say("SMARTY PANTS", "happy", 1000);
-
-
-
-
-
+say(brandText, "happy", 1000);
 

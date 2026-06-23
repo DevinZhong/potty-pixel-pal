@@ -4,7 +4,7 @@ English | [简体中文](README.zh-CN.md)
 
 An original LCD potty-training toy prototype.
 
-Potty Pixel Pal is a small open-source web toy about Pip, a paper-roll-shaped electronic pal with mint LCD eyes, chunky color buttons, and a low-resolution potty-training reaction game.
+Potty Pixel Pal is a small open-source web toy about Pippin Roll, nicknamed PIP, a paper-roll-shaped electronic pal with mint LCD eyes, chunky color buttons, and a low-resolution potty-training reaction game.
 
 The project draws from retro electronic learning toys, LCD handheld games, and old paper-roll-shaped gadget aesthetics. It is not affiliated with any existing brand or rights holder. No third-party artwork, screenshots, logos, audio, or proprietary assets are included.
 
@@ -46,9 +46,11 @@ docs/
 
 ## Character Name
 
-- English: `Pip`
+- Formal name: `Pippin Roll`
+- LCD nickname: `PIP`
 - 中文: `皮皮卷`
 
 ## License
 
 The repository uses MIT for code. Project-owned visual and audio assets use licenses that are declared together with those assets when they are added.
+
