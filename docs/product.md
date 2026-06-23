@@ -64,8 +64,7 @@ Only the top yellow grip is draggable. The left and right side bars are visual p
 Pull handle to wake the toy.
 Press 1 for No. 1 practice, or 2 for No. 2 practice.
 The eyes react and the one-line LCD gives a short prompt.
-Press ◎ to flush or clean.
-Press 2 / completion prompts to celebrate.
+Press ◎ to flush, clean, and celebrate with a `GOOD JOB` after a No. 1 or No. 2 prompt.
 Repeat until the toy rewards the player with a mini-game.
 ```
 
@@ -101,9 +100,9 @@ Potty Pixel Pal is first a paper-roll electronic potty-training toy, not a stand
 
 | Button | Training Role | Example LCD Feedback |
 | --- | --- | --- |
-| Left / yellow | Sit / try | `SIT?`, `TRY 1`, `WAIT` |
-| Center / blue | Flush / reset | `FLUSH`, `WHOOSH`, `CLEAN` |
-| Right / red | Done / celebrate | `DONE?`, `YAY!`, `STAR` |
+| Left / yellow | No. 1 / pee | `NO. 1`, `PEE?`, `TRY 1` |
+| Center / blue | Flush / clean / praise | `FLUSH`, `CLEAN`, `GOOD JOB` |
+| Right / red | No. 2 / poop | `NO. 2`, `POOP?`, `TRY 2` |
 
 The eyes react to every interaction. They can blink, squint, smile, panic, sleep, wink, or look proud. They are output screens, not tap targets.
 
@@ -139,7 +138,7 @@ SLEEP
 BOOT
   one-line scan, short beep sequence, logo text
 TRAIN
-  sit / flush / done potty-training routine
+  No. 1 / No. 2 prompt, then flush / praise potty-training routine
 IDLE
   eye animations, waiting for input
 GAME

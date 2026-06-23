@@ -5,9 +5,9 @@ const statusText = document.querySelector("#statusText");
 
 const faces = ["idle", "happy", "focus", "wink", "panic", "sleep"];
 const trainingLines = {
-  sit: ["NO. 1", "TRY 1", "SIT?", "WAIT"],
+  pee: ["NO. 1", "PEE?", "TRY 1", "WAIT"],
   flush: ["SWIRL", "FLUSH", "CLEAN", "WHOOSH"],
-  done: ["NO. 2", "TRY 2", "DONE?", "GOOD JOB"]
+  poop: ["NO. 2", "POOP?", "TRY 2", "PUSH?"]
 };
 
 let mode = "train";
@@ -20,6 +20,7 @@ let gameTimer = 0;
 let idleTimer = 0;
 let pullCount = 0;
 let pullWindow = 0;
+let pendingFlushPraise = false;
 let isDraggingHandle = false;
 let handleAngle = 0;
 let dragStartY = 0;
@@ -138,9 +139,16 @@ handle.addEventListener("pointercancel", finishHandleDrag);
 handle.addEventListener("click", (event) => event.preventDefault());
 
 function train(action) {
+  if (action === "flush" && pendingFlushPraise) {
+    pendingFlushPraise = false;
+    say("GOOD JOB", "happy", 1250);
+    return;
+  }
+
   const list = trainingLines[action];
   const text = list[Math.floor(Math.random() * list.length)];
-  const face = action === "done" ? "happy" : action === "flush" ? "wink" : "focus";
+  pendingFlushPraise = action === "pee" || action === "poop";
+  const face = action === "flush" ? "wink" : "focus";
   say(text, face, 1050);
 }
 
@@ -155,6 +163,7 @@ function startGame() {
   score = 0;
   combo = 0;
   roundMs = 1320;
+  pendingFlushPraise = false;
   statusText.textContent = "POTTY POP";
   toy.dataset.message = "short";
   setFace("focus");
@@ -165,6 +174,7 @@ function startGame() {
 function stopGame(text = "SMARTY PANTS") {
   mode = "train";
   toy.dataset.mode = "train";
+  pendingFlushPraise = false;
   clearPoop();
   window.clearTimeout(gameTimer);
   statusText.textContent = text;
