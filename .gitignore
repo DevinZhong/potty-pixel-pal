@@ -13,3 +13,8 @@ build/
 .env
 .env.*
 *.log
+
+# Internal notes kept out of the public repo
+docs/internal/
+notes/
+

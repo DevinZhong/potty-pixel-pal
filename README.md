@@ -1,21 +1,23 @@
 # Potty Pixel Pal
 
-An original, fan-inspired LCD potty-training toy prototype.
+English | [简体中文](README.zh-CN.md)
 
-Potty Pixel Pal is a small open-source web toy concept about a paper-roll-shaped electronic pal with mint LCD eyes, chunky color buttons, and a low-resolution potty-training reaction game.
+An original LCD potty-training toy prototype.
 
-This project is inspired by retro electronic learning toys, LCD handheld games, and the public conversation around Smarty Pants from Toy Story 5. It is not affiliated with, endorsed by, or sponsored by Disney, Pixar, Toy Story, or any related rights holders. No official artwork, screenshots, logos, audio, or proprietary assets are included.
+Potty Pixel Pal is a small open-source web toy about Pip, a paper-roll-shaped electronic pal with mint LCD eyes, chunky color buttons, and a low-resolution potty-training reaction game.
+
+The project draws from retro electronic learning toys, LCD handheld games, and old paper-roll-shaped gadget aesthetics. It is not affiliated with any existing brand or rights holder. No third-party artwork, screenshots, logos, audio, or proprietary assets are included.
 
 ## Project Goals
 
 - Create a front-view paper-roll toy character with a retro LCD personality.
-- Build a browser-playable prototype using HTML, CSS, Canvas, and JavaScript.
+- Build a browser-playable prototype using HTML, CSS, and JavaScript.
 - Keep the asset pipeline original and open-source friendly.
-- Document the design choices clearly so the project can evolve without relying on copyrighted source material.
+- Document the design clearly so the project can evolve without relying on protected source material.
 
 ## Current Status
 
-This repository now contains a playable front-view browser prototype in `index.html`, `src/styles.css`, and `src/main.js`, plus the supporting concept and planning docs. The current visual target is a front-facing, simplified paper-roll toy that leans close to the Smarty Pants silhouette without using that name or official assets.
+This repository contains a playable front-view browser prototype in `index.html`, `src/styles.css`, and `src/main.js`, plus a compact bilingual public doc set. The current visual target is a front-facing paper-roll toy with a simplified old-electronic look.
 
 ## Proposed Experience
 
@@ -30,22 +32,23 @@ This repository now contains a playable front-view browser prototype in `index.h
 
 ```text
 docs/
-  concept.md              Original character and visual direction
-  ip-guidelines.md         Practical fan-project safety rules
-  gameplay.md             LCD game proposal and controls
-  roadmap.md              Development phases
-  research-notes.md        Source confidence and open questions
+  product.md              Public product concept, interaction model, and gameplay
+  status.md               Public implementation status and roadmap snapshot
+  zh-CN/                  Simplified Chinese mirror of the public docs
 ```
 
-## Naming
+## Documentation
 
-- Repository name: `potty-pixel-pal`
-- Project name: Potty Pixel Pal
-- Character nickname candidates: Pip, Rollie, Pipo, Little Roll
-- Chinese nickname candidates: 皮皮卷, 小卷卷, 像素卷卷
+- English product guide: [docs/product.md](docs/product.md)
+- 中文产品说明: [docs/zh-CN/product.md](docs/zh-CN/product.md)
+- English status: [docs/status.md](docs/status.md)
+- 中文状态文档: [docs/zh-CN/status.md](docs/zh-CN/status.md)
 
-## License Plan
+## Character Name
 
-The code can use MIT once implementation begins. Original visual/audio assets should be licensed separately after the art direction is finalized.
+- English: `Pip`
+- 中文: `皮皮卷`
 
-See [docs/ip-guidelines.md](docs/ip-guidelines.md) before adding any assets.
+## License
+
+The repository uses MIT for code. Project-owned visual and audio assets use licenses that are declared together with those assets when they are added.
