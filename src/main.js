@@ -32,15 +32,16 @@ function setFace(face) {
 function setHandleAngle(angle) {
   handleAngle = Math.max(0, Math.min(90, angle));
   const progress = handleAngle / 90;
-  const frameY = progress * 149;
-  const sideHeight = 195 - progress * 154;
-  const sideTilt = progress * 24;
-  const sideOpacity = 1;
+  const topDrop = progress * 148;
+  const frameScale = 1;
+  const pop = progress * 9;
+  const topScale = 1 + progress * 0.01;
+  toy.style.setProperty("--handle-progress", progress.toFixed(3));
   toy.style.setProperty("--handle-angle", handleAngle + "deg");
-  toy.style.setProperty("--handle-bar-y", frameY + "px");
-  toy.style.setProperty("--handle-side-height", sideHeight + "px");
-  toy.style.setProperty("--handle-side-tilt", sideTilt + "deg");
-  toy.style.setProperty("--handle-side-opacity", String(sideOpacity));
+  toy.style.setProperty("--handle-top-drop", topDrop + "px");
+  toy.style.setProperty("--handle-frame-scale", frameScale.toFixed(3));
+  toy.style.setProperty("--handle-pop", pop + "px");
+  toy.style.setProperty("--handle-top-scale", topScale.toFixed(3));
 }
 
 function resetHandle() {
@@ -102,7 +103,7 @@ function triggerHandle() {
 
 function updateHandleFromPointer(event) {
   const distance = Math.max(0, event.clientY - dragStartY);
-  setHandleAngle(distance / 104 * 90);
+  setHandleAngle(distance / 150 * 90);
 }
 
 handle.addEventListener("pointerdown", (event) => {
