@@ -335,10 +335,10 @@ button { font: inherit; -webkit-tap-highlight-color: transparent; }
   content: "";
   position: absolute;
   z-index: 1;
-  left: 11px;
-  top: 8px;
-  width: 34px;
-  height: 36px;
+  left: 8px;
+  top: 2px;
+  width: 30px;
+  height: 34px;
   border: 2px solid var(--lcd-on);
   border-radius: 3px 3px 7px 7px;
   background:
@@ -354,7 +354,7 @@ button { font: inherit; -webkit-tap-highlight-color: transparent; }
   z-index: 1;
   left: 42px;
   right: 9px;
-  top: 13px;
+  top: 5px;
   height: 28px;
   border: 2px solid var(--lcd-on);
   border-left: 0;
