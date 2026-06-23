@@ -18,7 +18,7 @@ The main interaction is pretending to guide a toddler through a tiny potty routi
 | Center / blue | Flush / reset | `FLUSH`, `WHOOSH`, `CLEAN` |
 | Right / red | Done / celebrate | `DONE?`, `YAY!`, `STAR` |
 
-The eyes should react to every interaction. They can blink, squint, smile, panic, sleep, wink, or look proud. Tapping the eyes can cycle expressions, like a physical toy whose screen face changes when handled.
+The eyes should react to every interaction. They can blink, squint, smile, panic, sleep, wink, or look proud. They are output screens, not tap targets.
 
 ## Mini-Game Loop
 
@@ -38,8 +38,6 @@ The exact poop icon should be an original chunky pixel drawing or emoji-inspired
 
 | Input | Action |
 | --- | --- |
-| Tap eyes | Change expression |
-| Tap LCD | Wake / greet / exit mini-game |
 | Keyboard `1` | Left button |
 | Keyboard `2` | Center button |
 | Keyboard `3` | Right button |

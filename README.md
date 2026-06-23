@@ -8,18 +8,18 @@ This project is inspired by retro electronic learning toys, LCD handheld games, 
 
 ## Project Goals
 
-- Create an original paper-roll toy character with a retro LCD personality.
+- Create a front-view paper-roll toy character with a retro LCD personality.
 - Build a browser-playable prototype using HTML, CSS, Canvas, and JavaScript.
 - Keep the asset pipeline original and open-source friendly.
 - Document the design choices clearly so the project can evolve without relying on copyrighted source material.
 
 ## Current Status
 
-This repository currently contains concept and planning documents only. Implementation will come later.
+This repository now contains a playable front-view browser prototype in `index.html`, `src/styles.css`, and `src/main.js`, plus the supporting concept and planning docs. The current visual target is a front-facing, simplified paper-roll toy that leans close to the Smarty Pants silhouette without using that name or official assets.
 
 ## Proposed Experience
 
-- A vertical paper-roll toy body with a bright plastic handle.
+- A front-facing paper-roll toy body with a bright rectangular plastic handle.
 - Two circular LCD-style eye displays.
 - One rectangular mint LCD status/game screen.
 - Three physical-style buttons mapped to simple actions.

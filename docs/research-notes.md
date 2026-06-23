@@ -34,8 +34,8 @@ These details may be fun to discuss privately, but the open-source implementatio
 
 ## Open Questions
 
-- Should the body be more cylindrical or more square-toy-like?
-- Should the blue button mean gas, flush, or special action?
+- Body direction: front-facing and fairly square in silhouette, while still shading the paper roll as a cylindrical object.
+- Open interaction question: should the blue button stay strictly flush, or later pick up a second special function?
 - Should the character have hands, side tabs, or no limbs?
 - Should the game be a pure reaction game or include small memory sequences?
 - Should release v0.1.0 be a single HTML file or a tiny static site folder?

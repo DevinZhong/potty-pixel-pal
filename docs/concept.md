@@ -8,7 +8,7 @@ Potty Pixel Pal is a paper-roll-shaped electronic potty-training toy that teache
 
 The project aims for a high-recognition fan-inspired feel: a forgotten old potty-training gadget, shaped around a toilet-paper roll, with expressive LCD eyes and fussy toy feedback.
 
-The goal is to make the public reference easy to understand while keeping the implementation re-drawn and project-owned. The strongest overlap should be the broad toy fantasy, era, object category, and comedic premise. The exact face layout, screen graphics, button art, voice lines, proprietary names, and official assets should remain original.
+The goal is to make the public reference easy to understand while keeping the implementation re-drawn and project-owned. The strongest overlap can include the broad toy fantasy, front-view silhouette, old-toy mood, and comedic premise. The exact face layout, screen graphics, button art, voice lines, proprietary names, and official assets should remain original.
 
 ## Character Core
 
@@ -26,8 +26,8 @@ The goal is to make the public reference easy to understand while keeping the im
 
 Keep close to the reference category:
 
-- Warm white toilet-paper-roll body.
-- Bright molded plastic hanger or handle.
+- Warm white toilet-paper-roll body, read mostly from a flat frontal angle.
+- Bright molded rectangular plastic handle / frame.
 - Two mint LCD eye displays that change expression.
 - A very narrow one-line LCD status display.
 - Chunky physical buttons below the display.
@@ -36,7 +36,7 @@ Keep close to the reference category:
 
 Redraw for project identity:
 
-- Use original proportions, casing curves, labels, expression masks, button colors, and pixel icons.
+- Use project-owned proportions, casing treatment, labels, expression masks, button colors, and pixel icons, even when the overall front silhouette stays very close to the reference.
 - Avoid official screenshots, logos, dialogue, voice lines, exact UI art, and exact character branding.
 - Make the browser toy feel like a playable cousin of the source idea, not an asset copy.
 
@@ -66,7 +66,7 @@ The toy is not only a game. It should behave like a small potty-training device 
 
 ## Form Notes
 
-The safest recognizable path is not to make the character unrelated. Keep the paper-roll electronic potty-toy silhouette readable, but redraw the details:
+The current recognizable path is to keep the paper-roll electronic potty-toy silhouette very readable from the front, while redrawing the details:
 
 - Use a one-line LCD instead of a rich screen.
 - Make the eyes the main emotional interface.

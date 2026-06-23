@@ -6,13 +6,13 @@ This document is practical project hygiene, not legal advice.
 
 Potty Pixel Pal should be an original open-source project inspired by a general idea: retro LCD potty-training toys and paper-roll electronic gadgets.
 
-The project can mention inspiration in documentation, but the repository, assets, app title, and user-facing brand should not present themselves as an official recreation of Smarty Pants, Toy Story, Pixar, or Disney.
+The project can mention inspiration in documentation, but the repository, assets, app title, and user-facing brand should not present themselves as an official recreation of Smarty Pants, Toy Story, Pixar, or Disney. A close front-view homage with original naming and redrawn assets may reduce confusion, but it does not eliminate copyright or trademark risk.
 
 ## Avoid
 
 - Do not use official screenshots, posters, press images, logos, audio, or video.
 - Do not use `Disney`, `Pixar`, `Toy Story`, or `Smarty Pants` in the repository name, package name, app title, or primary branding.
-- Do not trace or copy exact UI layout from official images.
+- Do not trace or copy exact UI layout, screen art, or promotional compositions from official images.
 - Do not copy movie dialogue or voice lines.
 - Do not use official character art as a reference layer in committed files.
 - Do not sell merchandise or publish paid builds using protected names or likenesses.
